@@ -61,4 +61,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.before(:each, type: :system) do
+    driven_by :selenium, using: :headless_chrome do |driver_options|
+      driver_options.add_argument('--disable-dev-shm-usage')
+      driver_options.add_argument('--no-sandbox')
+    end
+  end
 end
