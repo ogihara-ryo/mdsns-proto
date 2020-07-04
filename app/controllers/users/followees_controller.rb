@@ -1,13 +1,15 @@
-class Users::FolloweesController < ApplicationController
-  before_action :set_user
+module Users
+  class FolloweesController < ApplicationController
+    before_action :set_user
 
-  def index
-    @followees = @user.followees
-  end
+    def index
+      @followees = @user.followees
+    end
 
-  private
+    private
 
-  def set_user
-    @user = User.find_by!(nickname: params[:user_nickname])
+    def set_user
+      @user = User.find_by!(nickname: params[:user_nickname])
+    end
   end
 end
