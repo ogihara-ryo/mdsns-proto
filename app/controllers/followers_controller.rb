@@ -8,6 +8,6 @@ class FollowersController < ApplicationController
   private
 
   def set_user
-    @user = params[:user_nickname].present? ? User.find_by!(nickname: params[:user_nickname]) : current_user
+    @user = current_user
   end
 end

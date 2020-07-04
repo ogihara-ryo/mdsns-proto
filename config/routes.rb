@@ -3,9 +3,12 @@ Rails.application.routes.draw do
 
   resources :followees, only: :index
   resources :followers, only: :index
+
   resources :users, path: '/', only: :show, param: :nickname do
-    resources :followees, only: :index
-    resources :followers, only: :index
+    scope module: :users do
+      resources :followees, only: :index
+      resources :followers, only: :index
+    end
   end
 
   get '/auth/github/callback' => 'sessions#create'
