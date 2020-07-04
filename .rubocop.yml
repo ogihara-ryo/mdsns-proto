@@ -1,5 +1,8 @@
 require: rubocop-rails
 
+AllCops:
+  NewCops: disable
+
 Layout/LineLength:
   Max: 128
 
