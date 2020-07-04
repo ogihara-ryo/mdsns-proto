@@ -1,5 +1,5 @@
 class FollowersController < ApplicationController
-  before_action :need_sign_in
+  before_action :required_sign_in
   before_action :set_user
 
   def index
