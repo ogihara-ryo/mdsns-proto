@@ -1,4 +1,8 @@
-  <%= image_tag @user.avatar_url, width: 20 %>
-  <%= @user.name %><%= github_link_to @user %>
-  <br />
-  <%= @user.bio %>
+<%= image_tag @user.avatar_url, width: 20 %>
+<%= @user.name %><%= github_link_to @user %>
+<br />
+<%= @user.bio %>
+
+<br />
+<%= link_to "フォロイー(#{@user.followees.count})", user_followees_path(@user) %>
+<%= link_to "フォロワー(#{@user.followers.count})", user_followers_path(@user) %>

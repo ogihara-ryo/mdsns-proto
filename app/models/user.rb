@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :follower_follows, foreign_key: :followee_id, class_name: 'Follow', dependent: :destroy, inverse_of: :followee
   has_many :followers, through: :follower_follows, source: :follower
+
+  def to_param
+    nickname
+  end
 end
