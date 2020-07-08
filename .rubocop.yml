@@ -6,6 +6,10 @@ AllCops:
 Layout/LineLength:
   Max: 128
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 

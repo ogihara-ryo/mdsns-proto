@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def signed_in?
     current_user.present?
   end
+
+  def required_sign_in
+    redirect_to root_path unless signed_in?
+  end
 end
