@@ -10,4 +10,18 @@ class User < ApplicationRecord
   def to_param
     nickname
   end
+
+  def follow(follower)
+    return if self == follower
+
+    followees << follower unless following?(follower)
+  end
+
+  def unfollow(follower)
+    followee_follows.find_by(followee_id: follower.id).destroy! if following?(follower)
+  end
+
+  def following?(follower)
+    followees.include?(follower)
+  end
 end

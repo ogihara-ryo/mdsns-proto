@@ -5,4 +5,6 @@
 
 <br />
 <%= link_to "フォロイー(#{@user.followees.count})", user_followees_path(@user) %>
-<%= link_to "フォロワー(#{@user.followers.count})", user_followers_path(@user) %>
+<%= link_to "フォロワー(#{@user.followers.count})", user_followers_path(@user), id: 'followers_count' %>
+<br />
+<%= render 'shared/follow_button', follower: @user %>

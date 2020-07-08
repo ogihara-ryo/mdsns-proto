@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :followees, only: :index
+  resources :followees, only: %i[index create destroy]
   resources :followers, only: :index
 
   resources :users, path: '/', only: :show, param: :nickname do

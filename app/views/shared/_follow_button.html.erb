@@ -1,0 +1,13 @@
+<div id='follow_form_<%= follower.id %>'>
+  <% if signed_in? && current_user != follower %>
+    <% if current_user.following?(follower) %>
+      <%= form_with url: followee_path(follower.id), method: :delete do |f| %>
+        <%= f.submit 'フォロー解除',class: 'btn btn-primary' %>
+      <% end %>
+    <% else %>
+      <%= form_with url: followees_path(id: follower.id) do |f| %>
+        <%= f.submit 'フォローする',class: 'btn btn-primary' %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
