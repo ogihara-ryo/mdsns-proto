@@ -1,5 +1,7 @@
 document.getElementById("follow_form_<%= @follower.id %>").innerHTML =
   "<%= escape_javascript(render('shared/follow_button', follower: @follower)) %>";
 
-document.getElementById("followers_count").innerHTML =
-  '<%= "フォロワー(#{@follower.followers.count})" %>';
+if (document.getElementById("followers_count")) {
+  document.getElementById("followers_count").innerHTML =
+    '<%= "フォロワー(#{@follower.followers.count})" %>';
+}

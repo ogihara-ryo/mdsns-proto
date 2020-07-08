@@ -3,6 +3,7 @@
     <li>
       <%= user_info(user) %>
       <hr />
+      <%= render 'shared/follow_button', follower: user %>
     </li>
   <% end %>
 </ul>
