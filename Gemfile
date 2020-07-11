@@ -30,6 +30,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
+gem 'coderay'
+gem 'redcarpet'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

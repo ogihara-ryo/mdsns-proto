@@ -1,7 +1,9 @@
 <ul>
   <% Post.where(user: users).each do |post| %>
     <li>
-      <%= post.content %>
+      <pre>
+        <%== markdown_to_html(post.content.force_encoding('UTF-8')) %>
+      </pre>
     </li>
   <% end %>
 </ul>
