@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :followees, only: %i[index create destroy]
   resources :followers, only: :index
+  resources :posts, only: %i[new create]
 
   resources :users, path: '/', only: :show, param: :nickname do
     scope module: :users do
