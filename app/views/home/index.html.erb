@@ -1,5 +1,7 @@
 <% if signed_in? %>
   <%= link_to 'Sign out', sign_out_path, method: :delete %>
+  <br />
+  <%= link_to 'Post', new_post_path %>
 
   <br />
   <%= image_tag current_user.avatar_url, width: 20 %> 
@@ -9,3 +11,5 @@
 <% else %>
   <%= link_to 'Sign in with GitHub', '/auth/github' %>
 <% end %>
+
+<%= render 'shared/timeline', users: User.all %>
